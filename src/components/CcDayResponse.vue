@@ -32,6 +32,10 @@ export default {
       // TODO: store into a DB using a backend API
       // For now: spoof the storage of the text
       console.log('Saving: ' + this.response.text)
+
+      this.response.text = ''
+
+      this.$emit('responseSubmitted')
     }
   }
 }
