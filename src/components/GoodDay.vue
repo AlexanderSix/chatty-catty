@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h3>{{ getResponse() }}</h3>
-    <cc-day-response />
+    <h3 v-if="!isResponseSubmitted">{{ getResponse() }}</h3>
+    <h3 v-if="isResponseSubmitted">{{ getThankYou() }}</h3>
+    <cc-day-response
+      v-if="!isResponseSubmitted"
+      @responseSubmitted="responseSubmitted()"
+    />
   </div>
 </template>
 
@@ -22,7 +26,8 @@ export default {
       ],
       thankYous: [
         "Thanks for filling me in! Let's talk again soon!"
-      ]
+      ],
+      isResponseSubmitted: false
     }
   },
 
@@ -38,6 +43,10 @@ export default {
 
     getThankYou () {
       return this.getRandomArrayElement(this.thankYous)
+    },
+
+    responseSubmitted () {
+      this.isResponseSubmitted = true
     }
   }
 }
