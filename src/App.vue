@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <!-- This is where things that belong on every page go (navbar, logo, etc) -->
-    <img src="./assets/logo.png">
 
     <!-- Router-view is where the components will get swapped in when
     we navigate around the application -->
