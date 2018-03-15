@@ -6,6 +6,8 @@
       v-if="!isResponseSubmitted"
       @responseSubmitted="responseSubmitted()"
     />
+    <img src="../assets/cat.png" alt="cat" class="chatty-cat">
+    <span class="hill"></span>
   </div>
 </template>
 
