@@ -21,9 +21,8 @@
       />
     </div>
 
-    <div class="chatty-cat">
-      CAT GOES HERE
-    </div>
+    <img src="../assets/cat.png" alt="cat" class="chatty-cat">
+    <span class="hill"></span>
 
   </div>
 </template>
@@ -48,6 +47,24 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+.chatty-cat {
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50%;
+  z-index: 1;
+}
+.hill{
+  height: 2000px;
+  width: 2000px;
+  background-color: #55efc4;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  top: 500px;
+  left: -800px;
+  z-index: -1;
 }
 ul {
   list-style-type: none;
