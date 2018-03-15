@@ -1,6 +1,7 @@
 <template>
   <div>
-    <router-link :to="linkDestination">{{ linkText }}</router-link>
+  <!-- No idea why tf this doesnt work ALEEEEX -->
+    <router-link :to="linkDestination"> <img v-bind:src={imgName}> </router-link>
   </div>
 </template>
 

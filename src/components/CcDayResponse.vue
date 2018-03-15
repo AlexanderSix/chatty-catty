@@ -8,6 +8,7 @@
       <button
         type="Submit"
         name="Submit"
+        id="submit"
       >
         Submit
       </button>
@@ -42,5 +43,17 @@ export default {
 </script>
 
 <style>
-
+#response{
+  border-radius: 2px;
+  width: 300px;
+}
+#submit{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px;
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+}
 </style>
