@@ -5,24 +5,28 @@
 
     <div class="face-buttons">
       <cc-face-button
-        img-name="../assets/good.png"
+        img-name="good"
         link-text="Good!"
         link-destination="good-day"
       />
       <cc-face-button
-        img-name="../assets/avg.png"
+        img-name="avg"
         link-text="Average."
         link-destination="average-day"
       />
       <cc-face-button
-        img-name="../assets/bad.png"
+        img-name="bad"
         link-text="Bad..."
         link-destination="bad-day"
       />
     </div>
 
-    <img src="../assets/cat.png" alt="cat" class="chatty-cat">
-    <span class="hill"></span>
+    <img
+      src="../assets/cat.png"
+      alt="cat"
+      class="chatty-cat"
+    >
+    <span class="hill" />
 
   </div>
 </template>
