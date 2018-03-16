@@ -1,12 +1,17 @@
 <template>
   <div>
-  <!-- No idea why tf this doesnt work ALEEEEX -->
-    <router-link :to="linkDestination"> <img v-bind:src={imgName}> </router-link>
+    <router-link :to="linkDestination"> <img :src="urlGenerator()"> </router-link>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    urlGenerator () {
+      let image = require.context('../assets/', false, /\.png$/)
+      return image('./' + this.imgName + '.png')
+    }
+  },
   name: 'CcFaceButton',
   props: {
     imgName: {
