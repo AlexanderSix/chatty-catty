@@ -13,10 +13,12 @@ import DialogueContainer from '@/components/DialogueContainer'
 
 export default {
   name: 'CatContainer',
+
   components: {
     CatSelector,
     DialogueContainer
   },
+
   data () {
     return {
 
