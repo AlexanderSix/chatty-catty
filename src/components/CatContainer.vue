@@ -1,41 +1,18 @@
 <template>
   <div>
     <!-- This is the main page of the application shown in the mockups -->
-    <h3>How was your day today?</h3>
-
-    <div class="face-buttons">
-      <cc-face-button
-        img-name="good"
-        link-text="Good!"
-        link-destination="good-day"
-      />
-      <cc-face-button
-        img-name="avg"
-        link-text="Average."
-        link-destination="average-day"
-      />
-      <cc-face-button
-        img-name="bad"
-        link-text="Bad..."
-        link-destination="bad-day"
-      />
-    </div>
-
-    <img
-      src="../assets/cat.png"
-      alt="cat"
-      class="chatty-cat"
-    >
-    <span class="hill" />
+    <dialogue-container />
+    <cat-selector />
 
   </div>
 </template>
 
 <script>
-import CcFaceButton from '@/components/CcFaceButton'
+import CatSelector from '@/components/CatSelector'
+import DialogueContainer from '@/components/DialogueContainer'
 
 export default {
-  name: 'Dashboard',
+  name: 'CatContainer',
   components: {
     CcFaceButton
   },
