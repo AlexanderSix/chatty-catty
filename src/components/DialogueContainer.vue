@@ -1,6 +1,7 @@
 <template>
   <div>
-
+    <h3>{{ dialogueHeader }}</h3>
+    <p>{{ dialogueText }}</p>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
   },
   data () {
     return {
-
+      dialogueHeader: "",
+      dialogueText: ""
     }
   }
 }
