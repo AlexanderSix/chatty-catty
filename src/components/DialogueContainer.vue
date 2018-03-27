@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: "DialogueContainer"
+  name: "DialogueContainer",
+  components: {
+
+  },
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 

@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: "CatSelector"
+  name: "CatSelector",
+  components: {
+
+  },
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
