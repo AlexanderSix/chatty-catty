@@ -14,7 +14,8 @@ import DialogueContainer from '@/components/DialogueContainer'
 export default {
   name: 'CatContainer',
   components: {
-    CcFaceButton
+    CatSelector,
+    DialogueContainer
   },
   data () {
     return {
