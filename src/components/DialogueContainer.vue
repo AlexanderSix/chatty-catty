@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="dialogue-container">
     <h3>{{ dialogueHeader }}</h3>
     <p>{{ dialogueText }}</p>
   </div>
