@@ -21,7 +21,7 @@ export default {
 
   data () {
     return {
-
+      // TODO: Use props to pass the header and text down to dialogue-container
     }
   }
 }

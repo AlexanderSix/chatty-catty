@@ -13,6 +13,7 @@ export default {
   },
   data () {
     return {
+      // TODO: Make these into props passed down by the CatContainer!
       dialogueHeader: "",
       dialogueText: ""
     }
