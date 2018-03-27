@@ -6,6 +6,16 @@
 
 <script>
 export default {
+  name: "Cat",
+  components: {
+
+  },
+  props: {
+    type: {
+      type: String,
+      required: true
+    }
+  }
 
 }
 </script>
