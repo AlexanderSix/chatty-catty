@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="cat">
+    <img :src="imageUrl" >
   </div>
 </template>
 
