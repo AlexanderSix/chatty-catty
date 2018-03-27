@@ -1,6 +1,8 @@
 <template>
   <div>
-    <cat />
+    <cat type="add"/>
+    <cat type="myCat"/>
+    <cat type="friendCat"/>
   </div>
 </template>
 
