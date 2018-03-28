@@ -5,8 +5,9 @@
       :header="header"
       :text="message"
     />
-    <cat-selector @catselected="onCatClicked"/>
-    <p>{{ currentCat }}</p>
+    <cat-selector @catselected="onCatClicked"
+      v-bind="{currentCat}"
+    />
 
   </div>
 </template>
@@ -27,9 +28,17 @@ export default {
   },
 
   methods: {
-    onCatClicked (newCat) {
-      this.currentCat = newCat
-      console.log("Cat Container fired!")
+    onCatClicked(newCat){
+      this.currentCat = newCat;
+      console.log("Cat Container fired!");
+      if(this.currentCat == 0){
+        this.header = "Add a friend";
+      } else if(this.currentCat == 1){
+        this.header = "I am your cat";
+      } else if(this.currentCat == 2){
+        this.header = "I am your friends cat!"
+      }
+
     }
   },
 

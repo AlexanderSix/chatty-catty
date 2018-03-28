@@ -46,14 +46,24 @@ export default {
     }
   },
 
+  props: {
+    currentCat: {
+      type: Number,
+      required: true
+    }
+  },
+
   methods: {
     /**
      * Sets up the cats array to always have the add cat
      * as the first cat, and the user's cat as the second
+     * and the friends cat as the third
      */
     setUpCatsArr () {
+      console.log(this.currentCat);
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
+      this.catsArr[2] = new CatClass('friend')
     }
   }
 }

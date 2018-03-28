@@ -4,7 +4,7 @@
       :src="urlGenerator()"
       @click="catSelected()"
     >
-    <a @click="catSelected">Meow! I'm cat {{ this.cat.id }}</a>
+    <div class="caption" @click="catSelected">{{this.cat.id}}</div>
   </div>
 </template>
 
@@ -53,5 +53,12 @@ export default {
 </script>
 
 <style>
-
+img {
+  width: 33%;
+  float: left;
+}
+.caption {
+  float: left;
+  margin-left:-20px
+}
 </style>
