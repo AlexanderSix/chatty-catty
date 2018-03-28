@@ -1,7 +1,10 @@
 <template>
   <div class="cat">
-    <img :src="urlGenerator()" @click="catSelected()">
-    <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a>
+    <img
+      :src="urlGenerator()"
+      @click="catSelected()"
+    >
+    <a @click="catSelected">Meow! I'm cat {{ this.cat.id }}</a>
   </div>
 </template>
 
@@ -40,9 +43,9 @@ export default {
       return image('./' + this.type + '-cat.png')
     },
 
-    catSelected(){
-      console.log("catSelected() fired!");
-      this.$parent.$emit("catselected", this.cat.id);
+    catSelected () {
+      console.log("catSelected() fired!")
+      this.$parent.$emit("catselected", this.cat.id)
     }
   }
 
