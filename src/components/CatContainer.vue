@@ -1,9 +1,12 @@
 <template>
   <div>
     <!-- This is the main page of the application shown in the mockups -->
-    <dialogue-container :header="header" :text="message"/>
+    <dialogue-container
+      :header="header"
+      :text="message"
+    />
     <cat-selector @catselected="onCatClicked"/>
-    <p>{{currentCat}}</p>
+    <p>{{ currentCat }}</p>
 
   </div>
 </template>
@@ -19,14 +22,14 @@ export default {
     CatSelector,
     DialogueContainer
   },
-  onCatSelectorClicked(){
-    console.log("cat selector clicked");
+  onCatSelectorClicked () {
+    console.log("cat selector clicked")
   },
 
   methods: {
-    onCatClicked(newCat){
-      this.currentCat = newCat;
-      console.log("Cat Container fired!");
+    onCatClicked (newCat) {
+      this.currentCat = newCat
+      console.log("Cat Container fired!")
     }
   },
 
