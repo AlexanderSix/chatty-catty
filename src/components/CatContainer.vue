@@ -1,8 +1,9 @@
 <template>
   <div>
     <!-- This is the main page of the application shown in the mockups -->
-    <dialogue-container />
+    <dialogue-container :header="header" :text="message"/>
     <cat-selector />
+    <p v-on:catClicked="catClicked()">{{currentCat}}</p>
 
   </div>
 </template>
@@ -19,9 +20,18 @@ export default {
     DialogueContainer
   },
 
+  methods: {
+    catClicked(newCat){
+      currentCat = newCat;
+    }
+  },
+
   data () {
     return {
       // TODO: Use props to pass the header and text down to dialogue-container
+      header: "Hello",
+      message: "How are you?",
+      currentCat: 0
     }
   }
 }

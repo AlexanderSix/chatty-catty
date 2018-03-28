@@ -1,6 +1,6 @@
 <template>
   <div class="cat">
-    <img :src="imageUrl" >
+    <img :src="imageUrl" @click="catSelected()">
   </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     type: {
       type: String,
       required: true
+    },
+    cat: {
+      type: Object,
+      required: true
     }
   },
 
@@ -32,6 +36,10 @@ export default {
   methods: {
     getImageUrl () {
       this.imageUrl = "./" + this.type + ".png"
+    },
+
+    catSelected(){
+      this.$emit("catClicked", this.cat.id);
     }
   }
 
