@@ -1,7 +1,7 @@
 <template>
   <div class="cat">
-    <!--<img :src="imageUrl" @click="catSelected()">-->
-    <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a>
+    <img src="../assets/cat1.png" @click="catSelected">
+    <!-- <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a> -->
   </div>
 </template>
 
@@ -49,5 +49,8 @@ export default {
 </script>
 
 <style>
-
+img {
+  width: 33%;
+  float: left;
+}
 </style>

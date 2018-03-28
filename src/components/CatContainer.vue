@@ -3,7 +3,6 @@
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container :header="header" :text="message"/>
     <cat-selector @catselected="onCatClicked"/>
-    <p>{{currentCat}}</p>
 
   </div>
 </template>
