@@ -1,7 +1,7 @@
 <template>
   <div class="cat">
     <img src="../assets/cat1.png" @click="catSelected">
-    <!-- <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a> -->
+    <div class="caption" @click="catSelected">{{this.cat.id}}</div>
   </div>
 </template>
 
@@ -52,5 +52,9 @@ export default {
 img {
   width: 33%;
   float: left;
+}
+.caption {
+  float: left;
+  margin-left:-20px
 }
 </style>

@@ -54,6 +54,7 @@ export default {
     setUpCatsArr () {
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
+      this.catsArr[2] = new CatClass('yourcat')
     }
   }
 }
