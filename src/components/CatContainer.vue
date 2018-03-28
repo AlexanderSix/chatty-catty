@@ -2,8 +2,8 @@
   <div>
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container :header="header" :text="message"/>
-    <cat-selector />
-    <p v-on:catClicked="catClicked()">{{currentCat}}</p>
+    <cat-selector @catselected="onCatClicked"/>
+    <p>{{currentCat}}</p>
 
   </div>
 </template>
@@ -19,10 +19,14 @@ export default {
     CatSelector,
     DialogueContainer
   },
+  onCatSelectorClicked(){
+    console.log("cat selector clicked");
+  },
 
   methods: {
-    catClicked(newCat){
-      currentCat = newCat;
+    onCatClicked(newCat){
+      this.currentCat = newCat;
+      console.log("Cat Container fired!");
     }
   },
 

@@ -1,6 +1,7 @@
 <template>
   <div class="cat">
-    <img :src="imageUrl" @click="catSelected()">
+    <!--<img :src="imageUrl" @click="catSelected()">-->
+    <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a>
   </div>
 </template>
 
@@ -39,7 +40,8 @@ export default {
     },
 
     catSelected(){
-      this.$emit("catClicked", this.cat.id);
+      console.log("catSelected() fired!");
+      this.$parent.$emit("catselected", this.cat.id);
     }
   }
 
