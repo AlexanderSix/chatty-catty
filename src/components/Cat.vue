@@ -1,6 +1,6 @@
 <template>
   <div class="cat">
-    <!--<img :src="imageUrl" @click="catSelected()">-->
+    <img :src="urlGenerator()" @click="catSelected()">
     <a @click="catSelected">Meow! I'm cat {{this.cat.id}}</a>
   </div>
 </template>
@@ -35,8 +35,9 @@ export default {
   },
 
   methods: {
-    getImageUrl () {
-      this.imageUrl = "./" + this.type + ".png"
+    urlGenerator () {
+      let image = require.context('../assets/', false, /\.png$/)
+      return image('./' + this.type + '-cat.png')
     },
 
     catSelected(){
