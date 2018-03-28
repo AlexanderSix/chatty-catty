@@ -12,20 +12,20 @@ export default {
 
   },
   props: {
-    header:{
+    header: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
-    text:{
+    text: {
       type: String,
-      required: true
+      required: true,
+      default: ""
     }
   },
   data () {
     return {
-      // TODO: Make these into props passed down by the CatContainer!
-      dialogueHeader: "",
-      dialogueText: ""
+
     }
   }
 }
