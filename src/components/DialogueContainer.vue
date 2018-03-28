@@ -1,7 +1,7 @@
 <template>
   <div id="dialogue-container">
-    <h3>{{ dialogueHeader }}</h3>
-    <p>{{ dialogueText }}</p>
+    <h3>{{ header }}</h3>
+    <p>{{ text }}</p>
   </div>
 </template>
 
@@ -10,6 +10,16 @@ export default {
   name: "DialogueContainer",
   components: {
 
+  },
+  props: {
+    header:{
+      type: String,
+      required: false
+    },
+    text:{
+      type: String,
+      required: true
+    }
   },
   data () {
     return {

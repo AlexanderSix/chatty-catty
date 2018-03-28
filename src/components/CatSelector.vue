@@ -4,6 +4,7 @@
       v-for="cat in catsArr"
       :key="cat.id"
       :type="cat.type"
+      :cat="cat"
     />
   </div>
 </template>
