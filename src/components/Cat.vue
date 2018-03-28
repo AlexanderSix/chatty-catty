@@ -1,6 +1,9 @@
 <template>
   <div class="cat">
-    <img src="../assets/cat1.png" @click="catSelected">
+    <img
+      :src="urlGenerator()"
+      @click="catSelected()"
+    >
     <div class="caption" @click="catSelected">{{this.cat.id}}</div>
   </div>
 </template>
@@ -35,13 +38,14 @@ export default {
   },
 
   methods: {
-    getImageUrl () {
-      this.imageUrl = "./" + this.type + ".png"
+    urlGenerator () {
+      let image = require.context('../assets/', false, /\.png$/)
+      return image('./' + this.type + '-cat.png')
     },
 
-    catSelected(){
-      console.log("catSelected() fired!");
-      this.$parent.$emit("catselected", this.cat.id);
+    catSelected () {
+      console.log("catSelected() fired!")
+      this.$parent.$emit("catselected", this.cat.id)
     }
   }
 

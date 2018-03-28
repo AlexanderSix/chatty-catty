@@ -1,8 +1,11 @@
 <template>
   <div>
     <!-- This is the main page of the application shown in the mockups -->
-    <dialogue-container :header="header" :text="message"/>
-    <cat-selector @catselected="onCatClicked" v-bind="{currentCat}"/>
+    <dialogue-container
+      :header="header"
+      :text="message"
+    />
+    <cat-selector @catselected="onCatClicked"/>
 
   </div>
 </template>
@@ -18,8 +21,8 @@ export default {
     CatSelector,
     DialogueContainer
   },
-  onCatSelectorClicked(){
-    console.log("cat selector clicked");
+  onCatSelectorClicked () {
+    console.log("cat selector clicked")
   },
 
   methods: {
@@ -33,6 +36,7 @@ export default {
       } else if(this.currentCat == 2){
         this.header = "I am your friends cat!"
       }
+
     }
   },
 
