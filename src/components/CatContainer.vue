@@ -2,7 +2,7 @@
   <div>
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container :header="header" :text="message"/>
-    <cat-selector @catselected="onCatClicked"/>
+    <cat-selector @catselected="onCatClicked" v-bind="{currentCat}"/>
 
   </div>
 </template>
@@ -26,6 +26,13 @@ export default {
     onCatClicked(newCat){
       this.currentCat = newCat;
       console.log("Cat Container fired!");
+      if(this.currentCat == 0){
+        this.header = "Add a friend";
+      } else if(this.currentCat == 1){
+        this.header = "I am your cat";
+      } else if(this.currentCat == 2){
+        this.header = "I am your friends cat!"
+      }
     }
   },
 
