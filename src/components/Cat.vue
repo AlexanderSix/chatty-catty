@@ -13,7 +13,7 @@ export default {
   name: "Cat",
 
   mounted () {
-    this.getImageUrl()
+
   },
 
   components: {
