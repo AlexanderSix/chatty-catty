@@ -63,7 +63,7 @@ export default {
       console.log(this.currentCat);
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
-      this.catsArr[2] = new CatClass('yourcat')
+      this.catsArr[2] = new CatClass('friend')
     }
   }
 }

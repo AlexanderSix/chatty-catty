@@ -5,7 +5,9 @@
       :header="header"
       :text="message"
     />
-    <cat-selector @catselected="onCatClicked"/>
+    <cat-selector @catselected="onCatClicked"
+      v-bind="{currentCat}"
+    />
 
   </div>
 </template>
