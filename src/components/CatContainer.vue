@@ -3,6 +3,7 @@
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
       @addintro="addIntro()"
+      @endintro="endIntro()"
       :header="header"
       :text="message"
       :type="currentCat.type"
@@ -52,6 +53,10 @@ export default {
 
     addIntro () {
       this.currentIntroState = 'add'
+    },
+
+    endIntro () {
+      this.currentIntroState = 'done'
     }
   },
 
