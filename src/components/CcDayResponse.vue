@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>Tell me a little more about it:</h3>
     <form @submit.prevent="submitResponse()">
       <textarea
         id="response"
@@ -20,6 +21,13 @@
 export default {
   name: 'CcDayResponse',
 
+  props: {
+    flipFeedback:{
+      type: Function,
+      required: true
+    }
+  },
+
   data () {
     return {
       response: {
@@ -35,6 +43,8 @@ export default {
       console.log('Saving: ' + this.response.text)
 
       this.response.text = ''
+
+      this.flipFeedback();
 
       this.$emit('responseSubmitted')
     }

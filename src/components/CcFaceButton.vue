@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-link :to="linkDestination"> <img :src="urlGenerator()"> </router-link>
-  </div>
+    <img :src="urlGenerator()">
 </template>
 
 <script>
@@ -24,7 +22,7 @@ export default {
     },
     linkDestination: {
       type: String,
-      required: true
+      required: false
     }
   }
 }
