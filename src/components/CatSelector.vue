@@ -5,6 +5,8 @@
       :key="cat.id"
       :type="cat.type"
       :cat="cat"
+      :currentIntroState="currentIntroState"
+      v-show="cat.isVisible"
     />
   </div>
 </template>
@@ -22,6 +24,7 @@ class CatClass {
   constructor (type) {
     this.id = numberOfCats++
     this.type = type
+    this.isVisible = false
   }
 }
 
@@ -34,6 +37,11 @@ export default {
    */
   created () {
     this.setUpCatsArr()
+  },
+
+  mounted () {
+    console.log("Selector")
+    console.warn(this.currentIntroState)
   },
 
   components: {
@@ -49,6 +57,10 @@ export default {
   props: {
     currentCat: {
       type: Object,
+      required: true
+    },
+    currentIntroState: {
+      type: String,
       required: true
     }
   },

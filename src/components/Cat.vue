@@ -1,7 +1,8 @@
 <template>
   <div class="cat">
     <img
-      :src="urlGenerator()"
+      :v-show="showImage"
+      :src="image"
       @click="catSelected()"
     >
     <div class="caption" @click="catSelected">{{this.cat.id}}</div>
@@ -13,11 +14,22 @@ export default {
   name: "Cat",
 
   mounted () {
-
+    this.urlGenerator()
   },
 
-  components: {
+  watch: {
+    currentIntroState:{
+      handler: function (val, oldVal) {
+        this.showCat()
+      },
+      deep: true
+    }
+  },
 
+  computed: {
+    showImage () {
+      return this.image && typeof this.image == 'object'
+    }
   },
 
   props: {
@@ -28,19 +40,32 @@ export default {
     cat: {
       type: Object,
       required: true
+    },
+    currentIntroState: {
+      type: String,
+      required: true
     }
   },
 
   data () {
     return {
-      imageUrl: ""
+      currentCat: this.cat,
+      image: {}
     }
   },
 
   methods: {
     urlGenerator () {
       let image = require.context('../assets/', false, /\.png$/)
-      return image('./' + this.type + '-cat.png')
+      this.image = image('./' + this.type + '-cat.png')
+    },
+
+    showCat () {
+      if (this.currentIntroState == this.currentCat.type) {
+        this.currentCat.isVisible = true
+      } else if (this.currentIntroState == 'intro' && this.currentCat.type == 'myCat') {
+        this.currentCat.isVisible = true
+      }
     },
 
     catSelected () {

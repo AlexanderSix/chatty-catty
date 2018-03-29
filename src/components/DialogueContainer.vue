@@ -40,6 +40,11 @@ export default {
     type: {
       type: String,
       required: true,
+      default: "intro" // TODO: This will probably have to change to "" when we actually wire up this app
+    },
+    currentIntroState: {
+      type: String,
+      required: true,
       default: "intro"
     }
   },

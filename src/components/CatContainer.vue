@@ -5,9 +5,11 @@
       :header="header"
       :text="message"
       :type="currentCat.type"
+      :currentIntroState="currentIntroState"
     />
     <cat-selector @catselected="onCatClicked"
       :currentCat="currentCat"
+      :currentIntroState="currentIntroState"
     />
 
   </div>
@@ -19,6 +21,11 @@ import DialogueContainer from '@/components/DialogueContainer'
 
 export default {
   name: 'CatContainer',
+
+  mounted () {
+    this.currentIntroState = 'intro'
+    this.currentCat = {type: 'intro'}
+  },
 
   components: {
     CatSelector,
@@ -48,7 +55,8 @@ export default {
       // TODO: Use props to pass the header and text down to dialogue-container
       header: "Hello",
       message: "How are you?",
-      currentCat: {}
+      currentCat: {},
+      currentIntroState: ""
     }
   }
 }
