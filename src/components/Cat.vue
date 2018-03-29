@@ -9,7 +9,7 @@
       class="caption"
       @click="catSelected"
     >
-      {{ this.cat.id }}
+      {{ this.cat.type }}
     </div>
   </div>
 </template>
@@ -63,7 +63,7 @@ export default {
     urlGenerator () {
       let image = require.context('../assets/', false, /\.png$/)
       this.image = image('./' + this.type + '-cat.png')
-    },
+  },
 
     showCat () {
       if (this.currentIntroState === this.currentCat.type) {
