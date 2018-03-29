@@ -1,5 +1,8 @@
 <template>
-    <img :src="urlGenerator()">
+    <img
+      :src="urlGenerator()"
+      @click="$emit('dayresponse')"
+      >
 </template>
 
 <script>

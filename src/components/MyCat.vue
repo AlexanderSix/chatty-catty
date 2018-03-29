@@ -1,22 +1,22 @@
 <template>
   <div>
   <div v-if="!this.dayQualityGiven">
-    <h3 v-on:click="flipDayResponse">How was your day today?</h3>
+    <h3>How was your day today?</h3>
     <div class="face-buttons">
   <cc-face-button
     img-name="good"
     link-text="Good!"
-    v-on:click="flipDayResponse"
+    @dayresponse="flipDayResponse()"
   />
   <cc-face-button
     img-name="avg"
     link-text="Average."
-    @click="flipDayResponse"
+    @dayresponse="flipDayResponse()"
   />
   <cc-face-button
     img-name="bad"
     link-text="Bad..."
-    @click="flipDayResponse"
+    @dayresponse="flipDayResponse()"
   />
 </div>
 </div>
