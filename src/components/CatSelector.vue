@@ -64,11 +64,19 @@ export default {
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
       this.catsArr[2] = new CatClass('friend')
+    },
+
+    onCatClicked(catId){
+      console.log(catId);
     }
   }
 }
 </script>
 
 <style>
+
+#cat-selector {
+  padding-top: 80%;
+}
 
 </style>
