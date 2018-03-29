@@ -4,7 +4,6 @@
     <add-cat v-if="type == 'add'" />
     <my-cat v-if="type == 'myCat'" />
     <friend-cat v-if="type == 'friend'" />
-    <my-cat v-else />
   </div>
 </template>
 
