@@ -19,7 +19,7 @@ export default {
   data () {
     return {
       header: "Add a Friend!",
-      text: "Enter your friend's phone number below to add them to your list (we'll change this text)",
+      text: "Enter your friend's phone number below to invite their cat",
       myNumber: ""
     }
   },

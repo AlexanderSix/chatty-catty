@@ -83,13 +83,14 @@ export default {
 
 <style>
 img {
-  background-color: lightblue;
   width: 100px;
   height: 100px;
   float: left;
 }
 .caption {
   float: left;
-  margin-left:-20px
+  position: relative;
+  bottom: 25px;
+  right: 53px;
 }
 </style>
