@@ -1,15 +1,12 @@
 <template>
-  <div class="cat">
+  <div class="cat" v-bind:style="{paddingLeft: (120 * this.cat.id) + 'px' }">
+    <div
+      @click="catSelected()"
+    >
     <img
       :v-show="showImage"
       :src="image"
-      @click="catSelected()"
     >
-    <div
-      class="caption"
-      @click="catSelected"
-    >
-      {{ this.cat.type }}
     </div>
   </div>
 </template>
@@ -92,5 +89,9 @@ img {
   position: relative;
   bottom: 25px;
   right: 53px;
+}
+.cat{
+  position: fixed;
+  bottom:0;
 }
 </style>
