@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bubble">
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
       @addintro="addIntro()"
@@ -100,5 +100,25 @@ li {
 }
 a {
   color: #42b983;
+}
+.bubble {
+	position: relative;
+	background: #d5d6d8;
+	border-radius: .4em;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #d5d6d8;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
 }
 </style>
