@@ -3,6 +3,7 @@
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
       @addintro="addIntro()"
+      @friendintro="friendIntro()"
       @endintro="endIntro()"
       :header="header"
       :text="message"
@@ -53,6 +54,10 @@ export default {
 
     addIntro () {
       this.currentIntroState = 'add'
+    },
+
+    friendIntro () {
+      this.currentIntroState = 'friend'
     },
 
     endIntro () {

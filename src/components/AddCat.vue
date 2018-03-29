@@ -20,7 +20,7 @@ export default {
   methods: {
     submitFriendPhoneNumber () {
       this.myNumber = ""
-      this.$parent.$emit('endintro')
+      this.$parent.$emit('friendintro')
       this.header = "Your friend has been added!"
       this.text = "Your friend's cat has been added! You can now check in on them by clicking on their cat along the bottom of your screen! Have you checked in yet today? Click on your cat to do a quick check-in and let it know how you're doing! Or keep adding numbers to add more friends!"
     }
