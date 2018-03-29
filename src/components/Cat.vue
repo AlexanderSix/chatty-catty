@@ -44,8 +44,7 @@ export default {
     },
 
     catSelected () {
-      console.log("catSelected() fired!")
-      this.$parent.$emit("catselected", this.cat.id)
+      this.$parent.$emit("catselected", this.cat)
     }
   }
 

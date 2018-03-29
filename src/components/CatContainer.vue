@@ -4,9 +4,10 @@
     <dialogue-container
       :header="header"
       :text="message"
+      :type="currentCat.type"
     />
     <cat-selector @catselected="onCatClicked"
-      v-bind="{currentCat}"
+      :currentCat="currentCat"
     />
 
   </div>
@@ -31,11 +32,11 @@ export default {
     onCatClicked(newCat){
       this.currentCat = newCat;
       console.log("Cat Container fired!");
-      if(this.currentCat == 0){
+      if(this.currentCat.id == 0){
         this.header = "Add a friend";
-      } else if(this.currentCat == 1){
+      } else if(this.currentCat.id == 1){
         this.header = "I am your cat";
-      } else if(this.currentCat == 2){
+      } else if(this.currentCat.id == 2){
         this.header = "I am your friends cat!"
       }
 
@@ -47,7 +48,7 @@ export default {
       // TODO: Use props to pass the header and text down to dialogue-container
       header: "Hello",
       message: "How are you?",
-      currentCat: 0
+      currentCat: {}
     }
   }
 }

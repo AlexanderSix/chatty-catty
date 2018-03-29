@@ -48,7 +48,7 @@ export default {
 
   props: {
     currentCat: {
-      type: Number,
+      type: Object,
       required: true
     }
   },
@@ -60,14 +60,12 @@ export default {
      * and the friends cat as the third
      */
     setUpCatsArr () {
-      console.log(this.currentCat);
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
       this.catsArr[2] = new CatClass('friend')
     },
 
     onCatClicked(catId){
-      console.log(catId);
     }
   }
 }

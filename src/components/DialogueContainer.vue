@@ -15,6 +15,11 @@ import FriendCat from '@/components/FriendCat'
 
 export default {
   name: "DialogueContainer",
+  mounted () {
+    if (typeof this.type == 'undefined') {
+      this.type = 'intro'
+    }
+  },
   components: {
     IntroDialogue,
     AddCat,
@@ -35,7 +40,7 @@ export default {
     type: {
       type: String,
       required: true,
-      default: ""
+      default: "intro"
     }
   },
   data () {
