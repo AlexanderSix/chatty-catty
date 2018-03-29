@@ -1,9 +1,9 @@
 <template>
   <div id="dialogue-container">
-    <intro v-if="type == 'intro'" />
-    <add v-if="type == 'add'" />
+    <intro-dialogue v-if="type == 'intro'" />
+    <add-cat v-if="type == 'add'" />
     <my-cat v-if="type == 'myCat'" />
-    <friend v-if="type == 'friend'" />
+    <friend-cat v-if="type == 'friend'" />
   </div>
 </template>
 
@@ -11,7 +11,10 @@
 export default {
   name: "DialogueContainer",
   components: {
-
+    IntroDialogue,
+    AddCat,
+    MyCat,
+    FriendCat
   },
   props: {
     header: {
