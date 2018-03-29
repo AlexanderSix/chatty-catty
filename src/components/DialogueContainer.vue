@@ -1,5 +1,5 @@
 <template>
-  <div id="dialogue-container">
+  <div>
     <intro-dialogue v-if="type == 'intro'" />
     <add-cat v-if="type == 'add'" />
     <my-cat v-if="type == 'myCat'" />
@@ -47,5 +47,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
