@@ -51,7 +51,7 @@ export default {
     },
 
     addIntro () {
-      this.currentIntroState = 'addIntro'
+      this.currentIntroState = 'add'
     }
   },
 
