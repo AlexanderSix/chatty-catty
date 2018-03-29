@@ -2,6 +2,7 @@
   <div>
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
+      @addintro="addIntro()"
       :header="header"
       :text="message"
       :type="currentCat.type"
@@ -47,6 +48,10 @@ export default {
         this.header = "I am your friends cat!"
       }
 
+    },
+
+    addIntro () {
+      this.currentIntroState = 'addIntro'
     }
   },
 

@@ -3,7 +3,7 @@
     <h3>Welcome to Chatty Catty!</h3>
     <p>I'm your new virtual cat! Please provide your phone number so that your friends can find you!</p><br>
     <input type="number" name="pnumber">
-    <button>Submit</button>
+    <button @click="$parent.$emit('addintro')">Submit</button>
   </div>
 </template>
 
