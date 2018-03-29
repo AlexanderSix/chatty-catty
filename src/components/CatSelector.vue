@@ -83,7 +83,7 @@ export default {
 <style>
 
 #cat-selector {
-  padding-top: 80%;
+  padding-top: 150px;
 }
 
 </style>

@@ -83,7 +83,9 @@ export default {
 
 <style>
 img {
-  width: 33%;
+  background-color: lightblue;
+  width: 100px;
+  height: 100px;
   float: left;
 }
 .caption {
