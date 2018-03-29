@@ -1,7 +1,9 @@
 <template>
   <div id="dialogue-container">
-    <h3>{{ header }}</h3>
-    <p>{{ text }}</p>
+    <intro v-if="type == 'intro'" />
+    <add v-if="type == 'add'" />
+    <my-cat v-if="type == 'myCat'" />
+    <friend v-if="type == 'friend'" />
   </div>
 </template>
 
@@ -18,6 +20,11 @@ export default {
       default: ""
     },
     text: {
+      type: String,
+      required: true,
+      default: ""
+    },
+    type: {
       type: String,
       required: true,
       default: ""
