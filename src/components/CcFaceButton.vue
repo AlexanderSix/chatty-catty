@@ -8,6 +8,12 @@
 <script>
 export default {
   name: 'CcFaceButton',
+  props: {
+    imgName: {
+      type: String,
+      required: true
+    }
+  },
   methods: {
     urlGenerator () {
       let image = require.context('../assets/', false, /\.png$/)
