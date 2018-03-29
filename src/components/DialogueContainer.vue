@@ -8,6 +8,11 @@
 </template>
 
 <script>
+import IntroDialogue from '@/components/IntroDialogue'
+import AddCat from '@/components/AddCat'
+import MyCat from '@/components/MyCat'
+import FriendCat from '@/components/FriendCat'
+
 export default {
   name: "DialogueContainer",
   components: {
