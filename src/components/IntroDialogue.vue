@@ -2,8 +2,16 @@
   <div>
     <h3>{{ header }}</h3>
     <p>{{ text }}</p><br>
-    <input v-if="showInput" type="number" name="pnumber" v-model="myNumber">
-    <button v-if="showInput" @click="submitPhoneNumber()">Submit</button>
+    <input
+      v-if="showInput"
+      type="number"
+      name="pnumber"
+      v-model="myNumber"
+    >
+    <button
+      v-if="showInput"
+      @click="submitPhoneNumber()"
+    >Submit</button>
   </div>
 </template>
 
@@ -11,7 +19,7 @@
 export default {
   name: "IntroDialogue",
   data () {
-    return{
+    return {
       header: "Welcome to Chatty Catty!",
       text: "I'm your new virtual cat! Please provide your phone number so that your friends can find you!",
       myNumber: "",

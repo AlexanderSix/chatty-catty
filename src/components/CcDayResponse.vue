@@ -22,7 +22,7 @@ export default {
   name: 'CcDayResponse',
 
   props: {
-    flipFeedback:{
+    flipFeedback: {
       type: Function,
       required: true
     }
@@ -44,7 +44,7 @@ export default {
 
       this.response.text = ''
 
-      this.flipFeedback();
+      this.flipFeedback()
 
       this.$emit('responseSubmitted')
     }

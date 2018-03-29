@@ -1,9 +1,9 @@
 <template>
   <div>
-    <intro-dialogue v-if="type == 'intro'" />
-    <add-cat v-if="type == 'add'" />
-    <my-cat v-if="type == 'myCat'" />
-    <friend-cat v-if="type == 'friend'" />
+    <intro-dialogue v-if="type === 'intro'" />
+    <add-cat v-if="type === 'add'" />
+    <my-cat v-if="type === 'myCat'" />
+    <friend-cat v-if="type === 'friend'" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import FriendCat from '@/components/FriendCat'
 export default {
   name: "DialogueContainer",
   mounted () {
-    if (typeof this.type == 'undefined') {
+    if (typeof this.type === 'undefined') {
       this.type = 'intro'
     }
   },
@@ -57,6 +57,5 @@ export default {
 </script>
 
 <style>
-
 
 </style>

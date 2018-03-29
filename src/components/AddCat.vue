@@ -2,8 +2,14 @@
   <div>
     <h3>{{ header }}</h3>
     <p>{{ text }}</p>
-    <input type="number" name="pnumber" v-model="myNumber">
-    <button @click="submitFriendPhoneNumber()">Submit</button>
+    <input
+      type="number"
+      name="pnumber"
+      v-model="myNumber"
+    >
+    <button
+      @click="submitFriendPhoneNumber()"
+    >Submit</button>
   </div>
 </template>
 

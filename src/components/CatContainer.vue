@@ -8,11 +8,12 @@
       :header="header"
       :text="message"
       :type="currentCat.type"
-      :currentIntroState="currentIntroState"
+      :current-intro-state="currentIntroState"
     />
-    <cat-selector @catselected="onCatClicked"
-      :currentCat="currentCat"
-      :currentIntroState="currentIntroState"
+    <cat-selector
+      @catselected="onCatClicked"
+      :current-cat="currentCat"
+      :current-intro-state="currentIntroState"
     />
 
   </div>
@@ -39,17 +40,16 @@ export default {
   },
 
   methods: {
-    onCatClicked(newCat){
-      this.currentCat = newCat;
-      console.log("Cat Container fired!");
-      if(this.currentCat.id == 0){
-        this.header = "Add a friend";
-      } else if(this.currentCat.id == 1){
-        this.header = "I am your cat";
-      } else if(this.currentCat.id == 2){
+    onCatClicked (newCat) {
+      this.currentCat = newCat
+      console.log("Cat Container fired!")
+      if (this.currentCat.id === 0) {
+        this.header = "Add a friend"
+      } else if (this.currentCat.id === 1) {
+        this.header = "I am your cat"
+      } else if (this.currentCat.id === 2) {
         this.header = "I am your friends cat!"
       }
-
     },
 
     addIntro () {
@@ -112,23 +112,23 @@ a {
   color: #42b983;
 }
 .bubble {
-	position: relative;
-	background: #d5d6d8;
-	border-radius: .4em;
+  position: relative;
+  background: #d5d6d8;
+  border-radius: .4em;
 }
 
 .bubble:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #d5d6d8;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #d5d6d8;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
 }
 </style>

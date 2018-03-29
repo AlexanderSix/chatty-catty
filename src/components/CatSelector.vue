@@ -5,7 +5,7 @@
       :key="cat.id"
       :type="cat.type"
       :cat="cat"
-      :currentIntroState="currentIntroState"
+      :current-intro-state="currentIntroState"
       v-show="cat.isVisible"
     />
   </div>
@@ -75,9 +75,6 @@ export default {
       this.catsArr[0] = new CatClass('add')
       this.catsArr[1] = new CatClass('myCat')
       this.catsArr[2] = new CatClass('friend')
-    },
-
-    onCatClicked(catId){
     }
   }
 }

@@ -5,7 +5,12 @@
       :src="image"
       @click="catSelected()"
     >
-    <div class="caption" @click="catSelected">{{this.cat.id}}</div>
+    <div
+      class="caption"
+      @click="catSelected"
+    >
+      {{ this.cat.id }}
+    </div>
   </div>
 </template>
 
@@ -18,8 +23,8 @@ export default {
   },
 
   watch: {
-    currentIntroState:{
-      handler: function (val, oldVal) {
+    currentIntroState: {
+      handler (val, oldVal) {
         this.showCat()
       },
       deep: true
@@ -28,7 +33,7 @@ export default {
 
   computed: {
     showImage () {
-      return this.image && typeof this.image == 'object'
+      return this.image && typeof this.image === 'object'
     }
   },
 
@@ -61,9 +66,9 @@ export default {
     },
 
     showCat () {
-      if (this.currentIntroState == this.currentCat.type) {
+      if (this.currentIntroState === this.currentCat.type) {
         this.currentCat.isVisible = true
-      } else if (this.currentIntroState == 'intro' && this.currentCat.type == 'myCat') {
+      } else if (this.currentIntroState === 'intro' && this.currentCat.type === 'myCat') {
         this.currentCat.isVisible = true
       }
     },
