@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style>
-
+input {
+  border-style:solid;
+}
 </style>
