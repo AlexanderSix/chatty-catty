@@ -1,5 +1,5 @@
 <template>
-  <div class="cat" v-bind:style="{paddingLeft: (120 * this.cat.id) + 'px' }">
+  <div class="cat" v-bind:style="{marginLeft: (120 * this.cat.id) + 'px' }">
     <div
       @click="catSelected()"
     >
