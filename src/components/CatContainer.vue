@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-  <div class="bubble">
+  <div class="bubble" v-bind:style="styleObject">
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
       class="inBubble"
@@ -53,6 +53,8 @@ export default {
       } else if (this.currentCat.id === 2) {
         this.header = "I am your friends cat!"
       }
+      this.styleObject["--offset"] = -110 + (100 * this.currentCat.id);
+      console.log(this.styleObject);
     },
 
     addIntro () {
@@ -74,7 +76,10 @@ export default {
       header: "Hello",
       message: "How are you?",
       currentCat: {},
-      currentIntroState: ""
+      currentIntroState: "",
+      styleObject: {
+        "--offset": -10
+      }
     }
   }
 }
@@ -118,7 +123,8 @@ a {
   position: relative;
   background: #fff;
   border-radius: .4em;
-  height: 600px
+  height: 600px;
+  --offset: -10px;
 }
 
 .bubble:after {
@@ -130,9 +136,8 @@ a {
   height: 0;
   border: 20px solid transparent;
   border-top-color: #fff;
+  padding-left: var(--offset);
   border-bottom: 0;
-  border-left: 0;
-  margin-left: -10px;
   margin-bottom: -20px;
 }
 .inBubble{
