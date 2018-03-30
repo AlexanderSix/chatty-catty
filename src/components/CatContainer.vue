@@ -53,7 +53,7 @@ export default {
       } else if (this.currentCat.id === 2) {
         this.header = "I am your friends cat!"
       }
-      this.styleObject["--speakfrom"] = -150 + (120 * this.currentCat.id) + 'px';
+      this.styleObject["--speakfrom"] = -130 + (115 * this.currentCat.id) + 'px';
       console.log(this.styleObject);
     },
 
@@ -78,7 +78,7 @@ export default {
       currentCat: {},
       currentIntroState: "",
       styleObject: {
-        "--speakfrom": "-30px"
+        "--speakfrom": "-20px"
       }
     }
   }

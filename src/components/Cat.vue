@@ -1,5 +1,5 @@
 <template>
-  <div class="cat" v-bind:style="{marginLeft: (120 * this.cat.id) + 'px' }">
+  <div class="cat" v-bind:style="{marginLeft: -5 + (115 * this.cat.id) + 'px' }">
     <div
       @click="catSelected()"
     >
@@ -80,9 +80,8 @@ export default {
 
 <style>
 img {
-  width: 100px;
-  height: 100px;
-  float: left;
+  width: 140px;
+  height: 140px;
 }
 .caption {
   float: left;
@@ -93,5 +92,6 @@ img {
 .cat{
   position: fixed;
   bottom:0;
+  margin-bottom: -10px
 }
 </style>
