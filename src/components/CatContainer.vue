@@ -1,7 +1,9 @@
 <template>
-  <div class="bubble">
+  <div class="background">
+  <div class="bubble" :style="styleObject">
     <!-- This is the main page of the application shown in the mockups -->
     <dialogue-container
+      class="inBubble"
       @addintro="addIntro()"
       @friendintro="friendIntro()"
       @endintro="endIntro()"
@@ -10,13 +12,14 @@
       :type="currentCat.type"
       :current-intro-state="currentIntroState"
     />
+  </div>
     <cat-selector
       @catselected="onCatClicked"
       :current-cat="currentCat"
       :current-intro-state="currentIntroState"
     />
 
-  </div>
+</div>
 </template>
 
 <script>
@@ -50,6 +53,8 @@ export default {
       } else if (this.currentCat.id === 2) {
         this.header = "I am your friends cat!"
       }
+      this.styleObject["--speakfrom"] = -130 + (115 * this.currentCat.id) + 'px';
+      console.log(this.styleObject);
     },
 
     addIntro () {
@@ -71,7 +76,10 @@ export default {
       header: "Hello",
       message: "How are you?",
       currentCat: {},
-      currentIntroState: ""
+      currentIntroState: "",
+      styleObject: {
+        "--speakfrom": "-20px"
+      }
     }
   }
 }
@@ -113,8 +121,10 @@ a {
 }
 .bubble {
   position: relative;
-  background: #d5d6d8;
+  background: #fff;
   border-radius: .4em;
+  height: 600px;
+  --speakfrom: -10px;
 }
 
 .bubble:after {
@@ -125,10 +135,12 @@ a {
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-top-color: #d5d6d8;
+  border-top-color: #fff;
+  margin-left: var(--speakfrom);
   border-bottom: 0;
-  border-left: 0;
-  margin-left: -10px;
   margin-bottom: -20px;
+}
+.inBubble{
+  padding:50px;
 }
 </style>
