@@ -45,8 +45,21 @@ export default {
   },
   methods: {
     flipDayResponse () {
+      /**
+       * Flips the dayQualityGiven variable to show the response component
+       *
+       * @precondition  N/A
+       * @postcondition The dayQualityGiven is the logical opposite of its initial value
+       */
       this.dayQualityGiven = !this.dayQualityGiven
     },
+
+    /**
+       * Flips the feedbackGiven variable to show the feedback component
+       *
+       * @precondition  N/A
+       * @postcondition The feedbackGiven is the logical opposite of its initial value
+       */
     flipFeedback () {
       this.feedbackGiven = !this.feedbackGiven
       console.log("feedback flipped")

@@ -28,6 +28,14 @@ export default {
     }
   },
   methods: {
+    /**
+     * Interprets the result to determine whether Luke had a good, average, or bad week
+     * (this will probably be added into the back-end to reduce front-end load)
+     *
+     * @precondition N/A
+     * @postcondition A message is returned depending on whether it has been a good,
+     *                average, or bad week
+     */
     interpretedResult () {
       if (this.goodDays > this.avgDays && this.goodDays > this.badDays) {
         return "Luke has had mostly good days this week!"

@@ -27,6 +27,12 @@ export default {
     }
   },
   methods: {
+    /**
+     * Spoofs the submittal of a phone number to the back-end
+     *
+     * @precondition User has entered a number in the text box and clicked submit
+     * @postcondition The number entry is spoofed
+     */
     submitPhoneNumber () {
       this.myNumber = ""
       this.showInput = false

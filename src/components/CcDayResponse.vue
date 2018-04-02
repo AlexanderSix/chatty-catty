@@ -37,6 +37,12 @@ export default {
   },
 
   methods: {
+    /**
+     * Spoofs a response submittal
+     *
+     * @precondition User has entered text into the field and clicked the submit button
+     * @postcondition The component emits the responseSubmitted event
+     */
     submitResponse () {
       // TODO: store into a DB using a backend API
       // For now: spoof the storage of the text

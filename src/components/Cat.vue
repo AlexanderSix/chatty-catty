@@ -57,11 +57,23 @@ export default {
   },
 
   methods: {
+    /**
+    * Generates the URL for the picture to get around a webpack rendering bug
+    *
+    * @precondition There is a picture called 'cat.png' in the assets folder
+    * @postcondition The photo's URL is generated
+    */
     urlGenerator () {
       let image = require.context('../assets/', false, /\.png$/)
       this.image = image('./' + this.type + '-cat.png')
-  },
+    },
 
+    /**
+    * Shows the cat for the intro sequence depending on the introState and currentCat props
+    *
+    * @precondition The intro sequence is being played in the UI
+    * @postcondition The cat becomes shown if the prop values are true
+    */
     showCat () {
       if (this.currentIntroState === this.currentCat.type) {
         this.currentCat.isVisible = true
@@ -70,6 +82,12 @@ export default {
       }
     },
 
+    /**
+    * Emits a "catselected" event to the parent component
+    *
+    * @precondition The user clicks on a cat
+    * @postcondition The "catselected" event is emitted from the parent component
+    */
     catSelected () {
       this.$parent.$emit("catselected", this.cat)
     }

@@ -15,6 +15,12 @@ export default {
     }
   },
   methods: {
+    /**
+    * Generates the URL for the picture to get around a webpack rendering bug
+    *
+    * @precondition There is a picture called 'cat.png' in the assets folder
+    * @postcondition The photo's URL is generated
+    */
     urlGenerator () {
       let image = require.context('../assets/', false, /\.png$/)
       return image('./' + this.imgName + '.png')

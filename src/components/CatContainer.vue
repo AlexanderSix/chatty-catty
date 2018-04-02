@@ -38,11 +38,15 @@ export default {
     CatSelector,
     DialogueContainer
   },
-  onCatSelectorClicked () {
-    console.log("cat selector clicked")
-  },
 
   methods: {
+    /**
+    * Listener for the "catselected" event that chooses which cat was selected based on event payload
+    *
+    * @precondition The "catselected" event was fired from a Cat component
+    * @postcondition The specific cat is selected and the speech bubble is styled to point
+    *                 to that specific cat
+    */
     onCatClicked (newCat) {
       this.currentCat = newCat
       console.log("Cat Container fired!")
@@ -57,14 +61,32 @@ export default {
       console.log(this.styleObject);
     },
 
+    /**
+    * Listens for the addintro event and changes the currentIntroState
+    *
+    * @precondition The addintro event was fired
+    * @postcondition The currentIntroState is changed to "add"
+    */
     addIntro () {
       this.currentIntroState = 'add'
     },
 
+    /**
+    * Listens for the friendintro event and changes the currentIntroState
+    *
+    * @precondition The friendintro event was fired
+    * @postcondition The currentIntroState is changed to "friend"
+    */
     friendIntro () {
       this.currentIntroState = 'friend'
     },
 
+    /**
+    * Listens for the endintro event and changes the currentIntroState
+    *
+    * @precondition The endintro event was fired
+    * @postcondition The currentIntroState is changed to "done"
+    */
     endIntro () {
       this.currentIntroState = 'done'
     }

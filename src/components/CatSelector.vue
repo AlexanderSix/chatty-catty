@@ -20,6 +20,9 @@ import Cat from '@/components/Cat'
 // number of cats
 var numberOfCats = 0
 
+/**
+* Creates CatClass objects that hold information about a Cat
+*/
 class CatClass {
   constructor (type) {
     this.id = numberOfCats++
@@ -81,9 +84,5 @@ export default {
 </script>
 
 <style>
-
-#cat-selector {
-  
-}
 
 </style>

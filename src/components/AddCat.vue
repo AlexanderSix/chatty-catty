@@ -24,6 +24,12 @@ export default {
     }
   },
   methods: {
+    /**
+    * Front-end spoofing of the friend's phone number submission
+    *
+    * @precondition The user must have put a phone number into the submission box
+    * @postcondition The phone number submission is spoofed, and the UI moves to the next frame
+    */
     submitFriendPhoneNumber () {
       this.myNumber = ""
       this.$parent.$emit('friendintro')
