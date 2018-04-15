@@ -3,6 +3,8 @@
     <h2>Login:</h2>
     <input type="email">
     <button @click.prevent="login()">Login</button>
+
+    <h5><router-link to="/register">Register Here!</router-link></h5>
   </div>
 </template>
 

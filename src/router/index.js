@@ -9,7 +9,8 @@ const router = new Router({
   routes: [
     { path: '/', name: 'CatContainer', component: CatContainer },
     { path: '/login', name: 'Login', component: Login },
-    { path: '/logout', name: 'Logout', component: Login }
+    { path: '/logout', name: 'Logout', component: Login },
+    { path: '/register', name: 'CatContainer', component: CatContainer }
   ]
 })
 
@@ -21,6 +22,7 @@ router.beforeEach((to, from, next) => {
   // page is closed, the login will be valid (until
   // logged out intentionally)
   let loginToken = localStorage.getItem('logintoken')
+  let registeredToken = localStorage.getItem('registeredtoken')
 
   // If the router is going to login, continue there
   if (to.path === '/login') {
@@ -35,7 +37,11 @@ router.beforeEach((to, from, next) => {
   }
 
   if (loginToken === "" || loginToken === undefined || loginToken === null) {
-    next('/login')
+    if (registeredToken === 'registered') {
+      next('/login')
+    } else {
+      next()
+    }
   } else {
     next()
   }
