@@ -29,7 +29,7 @@ router.beforeEach((to, from, next) => {
   if (loginToken === "" || loginToken === undefined || loginToken === null) {
     next('/login')
   } else {
-    next(to)
+    next()
   }
 })
 
