@@ -9,8 +9,7 @@ const router = new Router({
   routes: [
     { path: '/', name: 'CatContainer', component: CatContainer },
     { path: '/login', name: 'Login', component: Login },
-    { path: '/logout', name: 'Logout', component: Login },
-    { path: '/register', name: 'CatContainer', component: CatContainer }
+    { path: '/logout', name: 'Logout', component: Login }
   ]
 })
 
@@ -40,7 +39,11 @@ router.beforeEach((to, from, next) => {
     if (registeredToken === 'registered') {
       next('/login')
     } else {
-      next()
+      if (to.path === '/') {
+        next()
+      } else {
+        next('/')
+      }
     }
   } else {
     next()
