@@ -8,6 +8,7 @@
       :class="{ error : !correctPhoneNumber }"
       placeholder="Phone Number"
     >
+    <p v-if="wrongNumber">The number you input was incorrect. Please enter your number again.</p>
     <button
       @click.prevent="login()"
       v-show="correctPhoneNumber"
@@ -22,7 +23,8 @@ export default {
   name: "Login",
   data () {
     return {
-      myNumber: ""
+      myNumber: "",
+      wrongNumber: false
     }
   },
   computed: {
@@ -36,9 +38,18 @@ export default {
   },
   methods: {
     login () {
-      localStorage.setItem('logintoken', 'logged-in')
-      localStorage.setItem('registeredtoken', 'registered')
-      this.$router.push('/')
+      let number = localStorage.getItem('mynumber')
+
+      if (number === this.myNumber) {
+        localStorage.setItem('logintoken', 'logged-in')
+        localStorage.setItem('registeredtoken', 'registered')
+        this.$router.push('/')
+      } else {
+        this.myNumber = ''
+        this.wrongNumber = true;
+      }
+
+
     }
   }
 }
