@@ -4,7 +4,7 @@
     <input type="email">
     <button @click.prevent="login()">Login</button>
 
-    <h5><router-link to="/register">Register Here!</router-link></h5>
+    <h5 v-show="noRegisteredToken"><router-link to="/">Register Here!</router-link></h5>
   </div>
 </template>
 
@@ -14,6 +14,12 @@ export default {
   data () {
     return {
 
+    }
+  },
+  computed: {
+    noRegisteredToken () {
+      let token = localStorage.getItem('registeredtoken')
+      return (token === null || token === undefined || token === '')
     }
   },
   methods: {
@@ -26,6 +32,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
