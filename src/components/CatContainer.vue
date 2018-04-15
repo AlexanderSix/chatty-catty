@@ -1,5 +1,6 @@
 <template>
   <div class="background">
+    <router-link class="logout" to="logout"> Logout </router-link>
     <div
       class="bubble"
       :style="styleObject"
@@ -171,5 +172,13 @@ a {
 }
 .inBubble{
   padding:50px;
+}
+
+.logout {
+  position: fixed;
+  top: 0;
+  left: 80%;
+  color: #FFF;
+  text-decoration: none;
 }
 </style>
