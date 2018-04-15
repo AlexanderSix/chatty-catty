@@ -30,7 +30,13 @@ class CatClass {
     if (localStorage.getItem('registeredtoken') === 'registered') {
       this.isVisible = true
     } else {
+      // if (type == 'myCat') {
+      //   this.isVisible = true
+      // } else {
+      //   this.isVisible = false
+      // }
       this.isVisible = false
+
     }
 
   }
@@ -48,8 +54,7 @@ export default {
   },
 
   mounted () {
-    console.log("Selector")
-    console.warn(this.currentIntroState)
+
   },
 
   components: {
