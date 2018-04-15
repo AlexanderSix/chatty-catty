@@ -27,7 +27,12 @@ class CatClass {
   constructor (type) {
     this.id = numberOfCats++
     this.type = type
-    this.isVisible = false
+    if (localStorage.getItem('registeredtoken') === 'registered') {
+      this.isVisible = true
+    } else {
+      this.isVisible = false
+    }
+
   }
 }
 
