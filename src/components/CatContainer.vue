@@ -1,25 +1,27 @@
 <template>
   <div class="background">
-  <div class="bubble" :style="styleObject">
-    <!-- This is the main page of the application shown in the mockups -->
-    <dialogue-container
-      class="inBubble"
-      @addintro="addIntro()"
-      @friendintro="friendIntro()"
-      @endintro="endIntro()"
-      :header="header"
-      :text="message"
-      :type="currentCat.type"
-      :current-intro-state="currentIntroState"
-    />
-  </div>
+    <div
+      class="bubble"
+      :style="styleObject"
+    >
+      <!-- This is the main page of the application shown in the mockups -->
+      <dialogue-container
+        class="inBubble"
+        @addintro="addIntro()"
+        @friendintro="friendIntro()"
+        @endintro="endIntro()"
+        :header="header"
+        :text="message"
+        :type="currentCat.type"
+        :current-intro-state="currentIntroState"
+      />
+    </div>
     <cat-selector
       @catselected="onCatClicked"
       :current-cat="currentCat"
       :current-intro-state="currentIntroState"
     />
-
-</div>
+  </div>
 </template>
 
 <script>
@@ -37,7 +39,6 @@ export default {
       this.currentIntroState = 'intro'
       this.currentCat = {type: 'intro'}
     }
-
   },
 
   components: {
@@ -63,8 +64,8 @@ export default {
       } else if (this.currentCat.id === 2) {
         this.header = "I am your friends cat!"
       }
-      this.styleObject["--speakfrom"] = -130 + (115 * this.currentCat.id) + 'px';
-      console.log(this.styleObject);
+      this.styleObject["--speakfrom"] = -130 + (115 * this.currentCat.id) + 'px'
+      console.log(this.styleObject)
     },
 
     /**

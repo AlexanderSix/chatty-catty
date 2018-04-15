@@ -36,9 +36,7 @@ class CatClass {
       //   this.isVisible = false
       // }
       this.isVisible = false
-
     }
-
   }
 }
 

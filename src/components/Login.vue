@@ -46,10 +46,8 @@ export default {
         this.$router.push('/')
       } else {
         this.myNumber = ''
-        this.wrongNumber = true;
+        this.wrongNumber = true
       }
-
-
     }
   }
 }

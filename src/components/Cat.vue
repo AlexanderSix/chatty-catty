@@ -1,12 +1,13 @@
 <template>
-  <div class="cat" v-bind:style="{marginLeft: -5 + (115 * this.cat.id) + 'px' }">
-    <div
-      @click="catSelected()"
-    >
-    <img
-      :v-show="showImage"
-      :src="image"
-    >
+  <div
+    class="cat"
+    :style="{marginLeft: -5 + (115 * this.cat.id) + 'px' }"
+  >
+    <div @click="catSelected()">
+      <img
+        :v-show="showImage"
+        :src="image"
+      >
     </div>
   </div>
 </template>
