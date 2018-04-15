@@ -8,7 +8,8 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     { path: '/', name: 'CatContainer', component: CatContainer },
-    { path: '/login', name: 'Login', component: Login }
+    { path: '/login', name: 'Login', component: Login },
+    { path: '/logout', name: 'Logout', component: Login }
   ]
 })
 
@@ -23,6 +24,13 @@ router.beforeEach((to, from, next) => {
 
   // If the router is going to login, continue there
   if (to.path === '/login') {
+    next()
+  }
+
+  // If the router is going to logout, first remove the
+  // logintoken, THEN go to the login screen
+  if (to.path === '/logout') {
+    localStorage.removeItem('logintoken')
     next()
   }
 
