@@ -18,23 +18,18 @@ import Cat from '@/components/Cat'
 
 // Component-scope global to keep track of
 // number of cats
-var numberOfCats = 0
+// let numberOfCats = 0
 
 /**
 * Creates CatClass objects that hold information about a Cat
 */
 class CatClass {
-  constructor (type) {
-    this.id = numberOfCats++
+  constructor (type, numberOfCats) {
+    this.id = numberOfCats
     this.type = type
     if (localStorage.getItem('registeredtoken') === 'registered') {
       this.isVisible = true
     } else {
-      // if (type == 'myCat') {
-      //   this.isVisible = true
-      // } else {
-      //   this.isVisible = false
-      // }
       this.isVisible = false
     }
   }
@@ -83,9 +78,14 @@ export default {
      * and the friends cat as the third
      */
     setUpCatsArr () {
-      this.catsArr[0] = new CatClass('add')
-      this.catsArr[1] = new CatClass('myCat')
-      this.catsArr[2] = new CatClass('friend')
+      this.catsArr[0] = new CatClass('add', 0)
+      this.catsArr[1] = new CatClass('myCat', 1)
+      this.catsArr[2] = new CatClass('friend', 2)
+    },
+
+    reduceCatCount () {
+      numberOfCats--
+      console.log(numberOfCats)
     }
   }
 }
