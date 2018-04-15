@@ -10,6 +10,7 @@
         type="Submit"
         name="Submit"
         id="submit"
+        v-show="response.text.length > 0"
       >
         Submit
       </button>

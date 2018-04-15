@@ -6,8 +6,11 @@
       type="number"
       name="pnumber"
       v-model="myNumber"
+      :class="{ error: !correctPhoneNumber }"
+      placeholder="Like: 8032233213"
     >
     <button
+      v-if="correctPhoneNumber"
       @click="submitFriendPhoneNumber()"
     >Submit</button>
   </div>
@@ -16,6 +19,11 @@
 <script>
 export default {
   name: "AddCat",
+  computed: {
+    correctPhoneNumber () {
+      return this.myNumber.length === 10
+    }
+  },
   data () {
     return {
       header: "Add a Friend!",
@@ -43,5 +51,7 @@ export default {
 </script>
 
 <style>
-
+.error {
+  border: 3px solid red;
+}
 </style>
