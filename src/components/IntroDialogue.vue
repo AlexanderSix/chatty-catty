@@ -8,6 +8,7 @@
       name="pnumber"
       v-model="myNumber"
       :class="{ error : !correctPhoneNumber }"
+      placeholder="Like: 8033211234"
     >
     <button
       v-if="showInput && correctPhoneNumber"
