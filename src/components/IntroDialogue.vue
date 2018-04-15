@@ -7,9 +7,10 @@
       type="number"
       name="pnumber"
       v-model="myNumber"
+      :class="{ error : !correctPhoneNumber }"
     >
     <button
-      v-if="showInput"
+      v-if="showInput && correctPhoneNumber"
       @click="submitPhoneNumber()"
     >Submit</button>
   </div>
@@ -18,6 +19,11 @@
 <script>
 export default {
   name: "IntroDialogue",
+  computed: {
+    correctPhoneNumber () {
+      return this.myNumber.length === 10
+    }
+  },
   data () {
     return {
       header: "Welcome to Chatty Catty!",
@@ -48,5 +54,9 @@ export default {
 <style>
 input {
   border-style:solid;
+}
+
+.error {
+  border: 3px solid red;
 }
 </style>
