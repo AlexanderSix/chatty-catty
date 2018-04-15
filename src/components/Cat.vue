@@ -30,7 +30,7 @@ export default {
 
   computed: {
     showImage () {
-      return this.image && typeof this.image === 'object'
+      return this.image && (typeof this.image === 'object' || typeof this.image === 'string')
     }
   },
 

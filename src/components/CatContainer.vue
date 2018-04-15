@@ -30,8 +30,14 @@ export default {
   name: 'CatContainer',
 
   mounted () {
-    this.currentIntroState = 'intro'
-    this.currentCat = {type: 'intro'}
+    if (localStorage.getItem('registeredtoken') === "registered") {
+      this.currentIntroState = 'done'
+      this.currentCat = {type: 'myCat'}
+    } else {
+      this.currentIntroState = 'intro'
+      this.currentCat = {type: 'intro'}
+    }
+
   },
 
   components: {

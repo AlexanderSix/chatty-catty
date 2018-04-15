@@ -27,7 +27,18 @@ class CatClass {
   constructor (type) {
     this.id = numberOfCats++
     this.type = type
-    this.isVisible = false
+    if (localStorage.getItem('registeredtoken') === 'registered') {
+      this.isVisible = true
+    } else {
+      // if (type == 'myCat') {
+      //   this.isVisible = true
+      // } else {
+      //   this.isVisible = false
+      // }
+      this.isVisible = false
+
+    }
+
   }
 }
 
@@ -43,8 +54,7 @@ export default {
   },
 
   mounted () {
-    console.log("Selector")
-    console.warn(this.currentIntroState)
+
   },
 
   components: {

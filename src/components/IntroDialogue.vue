@@ -34,8 +34,9 @@ export default {
      * @postcondition The number entry is spoofed
      */
     submitPhoneNumber () {
-      this.myNumber = ""
+      localStorage.setItem('mynumber', this.myNumber)
       this.showInput = false
+      this.myNumber = ""
       this.$parent.$emit('addintro')
       this.header = "Add a friend!"
       this.text = "I can only do my job if you add a friend's cat for me to chat with! Click on the cat to my left to start adding friends and watch as they appear along the bottom of your screen!"
