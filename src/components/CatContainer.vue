@@ -11,6 +11,7 @@
         @addintro="addIntro()"
         @friendintro="friendIntro()"
         @endintro="endIntro()"
+        @removeFriend="onFriendRemoved()"
         :header="header"
         :text="message"
         :type="currentCat.type"
@@ -21,6 +22,7 @@
       @catselected="onCatClicked"
       :current-cat="currentCat"
       :current-intro-state="currentIntroState"
+      ref="catSelector"
     />
   </div>
 </template>
@@ -97,6 +99,11 @@ export default {
     */
     endIntro () {
       this.currentIntroState = 'done'
+    },
+
+    onFriendRemoved() {
+      console.log("I heard removeFriend!");
+      this.$refs.catSelector.removeFriend();
     }
   },
 
