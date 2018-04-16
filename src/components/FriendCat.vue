@@ -49,7 +49,6 @@ export default {
 
     onRemoveFriend (event){
       this.$parent.$emit('removeFriend');
-      console.log("we emitted");
     }
   }
 }

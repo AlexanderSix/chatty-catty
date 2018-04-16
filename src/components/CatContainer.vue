@@ -102,8 +102,9 @@ export default {
     },
 
     onFriendRemoved() {
-      console.log("I heard removeFriend!");
       this.$refs.catSelector.removeFriend();
+      this.currentCat = {type: "myCat"};
+      this.styleObject["--speakfrom"] = -15 + 'px';
     }
   },
 
