@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p class="rFriend">Remove Friend</p>
     <h3>{{ header }}</h3>
     <chart
       :good-days="goodDays"
@@ -50,5 +51,12 @@ export default {
 </script>
 
 <style>
+
+.rFriend {
+  position: fixed;
+top: 50px;
+left: 250px;
+color: red;
+}
 
 </style>
