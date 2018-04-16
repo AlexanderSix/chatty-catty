@@ -11,6 +11,7 @@
         @addintro="addIntro()"
         @friendintro="friendIntro()"
         @endintro="endIntro()"
+        @removeFriend="onFriendRemoved()"
         :header="header"
         :text="message"
         :type="currentCat.type"
@@ -21,6 +22,7 @@
       @catselected="onCatClicked"
       :current-cat="currentCat"
       :current-intro-state="currentIntroState"
+      ref="catSelector"
     />
   </div>
 </template>
@@ -97,6 +99,12 @@ export default {
     */
     endIntro () {
       this.currentIntroState = 'done'
+    },
+
+    onFriendRemoved() {
+      this.$refs.catSelector.removeFriend();
+      this.currentCat = {type: "myCat"};
+      this.styleObject["--speakfrom"] = -15 + 'px';
     }
   },
 

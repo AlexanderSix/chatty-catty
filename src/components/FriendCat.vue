@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p class="rFriend" @click="onRemoveFriend">Remove Friend</p>
     <h3>{{ header }}</h3>
     <chart
       :good-days="goodDays"
@@ -44,11 +45,22 @@ export default {
       } else {
         return "Luke has had a pretty average week!"
       }
+    },
+
+    onRemoveFriend (event){
+      this.$parent.$emit('removeFriend');
     }
   }
 }
 </script>
 
 <style>
+
+.rFriend {
+  position: fixed;
+top: 50px;
+left: 250px;
+color: red;
+}
 
 </style>

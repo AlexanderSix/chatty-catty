@@ -6,6 +6,7 @@
       :type="cat.type"
       :cat="cat"
       :current-intro-state="currentIntroState"
+      :removeFriend="removeFriend"
       v-show="cat.isVisible"
     />
   </div>
@@ -86,8 +87,12 @@ export default {
     reduceCatCount () {
       numberOfCats--
       console.log(numberOfCats)
+    },
+
+    removeFriend () {
+      this.catsArr[2].isVisible = false;
     }
-  }
+  },
 }
 </script>
 
